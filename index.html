@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hazard Games</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" data-target="home">HOME</a></li>
+        <li><a href="#" data-target="sportka">SPORTKA</a></li>
+        <li><a href="#" data-target="eurojackpot">EUROJACKPOT</a></li>
+        <li><a href="#" data-target="blackjack">BLACKJACK</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="content">
+      <h1>Welcome to Hazard Games</h1>
+    </section>
+
+    <section id="sportka" class="content">
+      <h1>SPORTKA</h1>
+      <div class="Button-Container">
+        <button onclick="Sportka()">Sportka</button>
+        <button onclick="deleteSportka()">Smazat</button>
+      </div>
+      <p id="sportkaNumbers"></p>
+    </section>
+
+    <section id="eurojackpot" class="content">
+      <h1>EUROJACKPOT</h1>
+      <div class="Button-Container">
+        <button onclick="Eurojackpot()">Eurojackpot</button>
+        <button onclick="EurojackpotBonus()">Bonus</button>
+        <button onclick="deleteEuroNumbers()">Smazat</button>
+      </div>
+      <p id="EuroNumbers"></p>
+      <p id="EurojackpotBonus"></p>
+    </section>
+
+    <section id="blackjack" class="content">
+      <h1>BLACKJACK</h1>
+        <div class="input-group">
+            <label for="playerCard1">První karta hráče:</label>
+            <input type="text" id="playerCard1" maxlength="2">
+        </div>
+        <div class="input-group">
+            <label for="playerCard2">Druhá karta hráče:</label>
+            <input type="text" id="playerCard2" maxlength="2">
+        </div>
+        <div class="input-group">
+            <label for="dealerCard">Karta dealera:</label>
+            <input type="text" id="dealerCard" maxlength="2">
+        </div>
+        <button id="evaluateBtn">Vyhodnotit</button>
+        <div id="result"></div>
+        <button id="clearBtn">Smazat čísla</button>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Hazard games</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
