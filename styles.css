@@ -1,43 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: black;
+  background-color: #14213d;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: black;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  float: left;
+  margin: 0 15px;
 }
 
 nav ul li a {
-  display: block;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
+  text-transform: uppercase;
+  font-weight: 600;
   text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-  background-color: #14213d;
+  background-color: #fca311;
+  color: #14213d;
+  border-radius: 5px;
 }
 
 main {
-  padding: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .content {
   display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 #home {
@@ -45,51 +61,70 @@ main {
 }
 
 footer {
-  background-color: black;
+  background-color: #14213d;
   color: white;
   text-align: center;
-  padding: 10px 0;
+  padding: 15px 0;
   position: fixed;
   width: 100%;
   bottom: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
-  font-family: 'Lucida Sans';
-  padding: 10px 20px;
-  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 25px;
+  background-color: #14213d;
   color: white;
-  text-align: center;
+  border: none;
+  border-radius: 50px;
   font-size: 16px;
-  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin: 5px;
 }
 
 button:hover {
   background-color: #fca311;
+  box-shadow: 0 5px 15px rgba(252, 163, 17, 0.3);
 }
 
-#EuroNumbers {
-  font-family: 'Lucida Sans';
+input[type="text"] {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: calc(100% - 22px);
+  box-sizing: border-box;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #14213d;
+  font-weight: 600;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.Button-Container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+}
+
+#EuroNumbers,
+#EurojackpotBonus {
   padding-top: 10px;
   font-size: 20px;
   margin-top: 10px;
-  color: black;
-}
-
-#EurojackpotBonus {
-  font-family: 'Lucida Sans';
-  font-size: 20px;
-  margin-top: 10px;
-  color: black;
-}
-
-.button-container {
-  font-family: 'Lucida Sans';
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* mezera mezi tlačítky */
-  margin-bottom: 20px; /* mezera pod kontejnerem tlačítek */
+  color: #14213d;
 }
