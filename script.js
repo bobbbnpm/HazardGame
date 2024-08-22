@@ -102,7 +102,7 @@ function calculatePlayerTotal(playerCards) {
   playerCards.forEach(card => {
       if (card === 'A') {
           hasAce = true;
-          total += 11; // Eso bude za 11, pokud se to hodí
+          total += 11; // Eso bude za 11
       } else {
           total += parseInt(card) || 10; // Karty 10, J, Q, K jsou všechny 10
       }
@@ -129,133 +129,209 @@ function getAction(dealerCard, playerTotal, playerCards) {
 
 function getHardTotalAction(dealerCard, total) {
   if (dealerCard === 2) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'STAND';
-      if (total === 12) return 'HIT';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'HIT';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total >=13 && total <= 16) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 12) return 'HIT (táhnete další kartu)';
+      if (total === 11 || total === 10) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total === 9) return 'HIT (táhnete další kartu)';
+      if (total >= 5 && total <= 8) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 3) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'STAND';
-      if (total === 12) return 'HIT';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'DOUBLE';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 16) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 15) return 'STAND (stojíte, další kartu neberete)';
+      if (totral === 14) return 'STAND (stojíte, další kartu neberete)';
+      if (totral === 13) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 12) return 'HIT (táhnete další kartu)';
+      if (total >= 10 && total <= 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total === 9) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 8) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 4) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'STAND';
-      if (total === 12) return 'STAND';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'DOUBLE';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 13 && total <= 16) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 12) return 'HIT (táhnete další kartu)';
+      if (total >= 9 && total <= 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 8) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 5) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'STAND';
-      if (total === 12) return 'STAND';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'DOUBLE';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 12 && total <= 16) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 9 && total <= 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 8) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 6) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'STAND';
-      if (total === 12) return 'STAND';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'DOUBLE';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 12 && total <= 16) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 9 && total <= 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 8) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 7) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'HIT';
-      if (total === 12) return 'HIT';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'HIT';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 12 && total <= 16) return 'HIT (táhnete další kartu)';
+      if (total >= 10 && total <= 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 9) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 8) {
-      if (total >= 17) return 'STAND';
-      if (total >= 13 && total <= 16) return 'HIT';
-      if (total === 12) return 'HIT';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'HIT';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total >= 12 && total <= 16) return 'HIT (táhnete další kartu)';
+      if (total === 10 || total === 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 9) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 9) {
-      if (total >= 17) return 'STAND';
-      if (total === 16) return 'SURRENDER';
-      if (total >= 13 && total <= 15) return 'HIT';
-      if (total === 12) return 'HIT';
-      if (total === 11 || total === 10) return 'DOUBLE';
-      if (total === 9) return 'HIT';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 16) return 'SURRENDER (pokud je to možné odstoupíme ze hry - vzdáme hru)';
+      if (total >= 12 && total <= 15) return 'HIT (táhnete další kartu)';
+      if (total === 10 || total === 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 9) return 'HIT (táhnete další kartu)';
   } else if (dealerCard === 10) {
-      if (total >= 17) return 'STAND';
-      if (total === 16 || total === 15) return 'SURRENDER';
-      if (total >= 13 && total <= 14) return 'HIT';
-      if (total === 12) return 'HIT';
-      if (total === 11) return 'DOUBLE';
-      if (total === 10 || total === 9) return 'HIT';
-      if (total >= 5 && total <= 8) return 'HIT';
-  } else if (dealerCard === 11) { // Eso
-      if (total >= 17) return 'STAND';
-      if (total === 16) return 'SURRENDER';
-      if (total >= 13 && total <= 15) return 'HIT';
-      if (total === 12) return 'HIT';
-      if (total === 11) return 'HIT';
-      if (total === 10 || total === 9) return 'HIT';
-      if (total >= 5 && total <= 8) return 'HIT';
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 16 || total === 15) return 'SURRENDER (pokud je to možné odstoupíme ze hry - vzdáme hru)';
+      if (total >= 12 && total <= 14) return 'HIT (táhnete další kartu)';
+      if (total === 11) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+      if (total >= 5 && total <= 10) return 'HIT (táhnete další kartu)';
+  } else if (dealerCard === 11) { // Eso (A)
+      if (total >= 17) return 'STAND (stojíte, další kartu neberete)';
+      if (total === 16) return 'SURRENDER (pokud je to možné odstoupíme ze hry - vzdáme hru)';
+      if (total >= 5 && total <= 15) return 'HIT (táhnete další kartu)';
   }
 }
 
 function getSoftTotalAction(dealerCard, playerCards) {
-  let otherCard = playerCards.find(card => card !== 'A');
-  let total = otherCard === 'A' ? 2 : parseInt(otherCard) || 10;
+  // zjistime, zda je v ruce ESO (A)
+  const hasAce = playerCards.includes('A');
+  // pokud máme ESO, tak vybereme ostatní karty a zohledníme je jako měkký součet
+  if (hasAce) {
+    // zjistíme hodnotu druhé karty
+    let otherCard = playerCards.find(card => card !== 'A');
+    let total = otherCard === 'A' ? 2 : parseInt(otherCard) || 10;
+    // 11 + další karty, takže měkký součet je o číslo více
+    let softTotal = total + 11;
 
-  if (dealerCard >= 2 && dealerCard <= 6) {
-      if (total >= 9) return 'STAND';
-      if (total === 8) return 'DOUBLE';
-      if (total === 7) return 'DOUBLE';
-      if (total === 6) return 'DOUBLE';
-      if (total === 5) return 'DOUBLE';
-      if (total === 4) return 'DOUBLE';
-      if (total <= 3) return 'HIT';
-  } else {
-      if (total >= 9) return 'STAND';
-      if (total === 8) return 'HIT';
-      if (total === 7) return 'HIT';
-      if (total === 6) return 'HIT';
-      if (total === 5) return 'HIT';
-      if (total === 4) return 'HIT';
-      if (total <= 3) return 'HIT';
-  }
-}
+    //rozhodovaci logika
+    switch (dealerCard) {
+        case 2:
+            if (softTotal >= 18 && total <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 13 && softTotal <= 17) return 'HIT (táhnete další kartu)';
+        case 3:
+            if (softTotal >= 19 && total <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 17 && total <= 18) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+            if (softTotal >= 13 && softTotal <= 16) return 'HIT (táhnete další kartu)';
+        case 4:
+            if (softTotal >= 19 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal === 18) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Stand)';
+            if (softTotal >= 15 && softTotal <= 17) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+            if (softTotal >= 13 && softTotal <= 14) return 'HIT (táhnete další kartu)';
+        case 5:
+            if (softTotal >= 19 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal === 18) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Stand)';
+            if (softTotal >= 13 && softTotal <= 17) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+        case 6:
+            if (softTotal >= 19 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal === 18) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Stand)';
+            if (softTotal >= 13 && softTotal <= 17) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+        case 7:
+            if (softTotal >= 18 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 13 && softTotal <= 17) return 'HIT (táhnete další kartu)';
+        case 8:
+            if (softTotal >= 18 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 13 && softTotal <= 17) return 'HIT (táhnete další kartu)';
+        case 9:
+            if (softTotal >= 19 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 13 && softTotal <= 18) return 'HIT (táhnete další kartu)';
+        case 10:
+            if (softTotal >= 19 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 13 && softTotal <= 18) return 'HIT (táhnete další kartu)';
+        case 'A':
+            if (softTotal >= 19 && softTotal <= 20) return 'STAND (stojíte, další kartu neberete)';
+            if (softTotal >= 13 && softTotal <= 18) return 'HIT (táhnete další kartu)';
+    }
+} }
 
 function getPairAction(dealerCard, playerCards) {
-  const cardValue = parseInt(playerCards[0]) || (playerCards[0] === 'A' ? 11 : 10);
-  if (cardValue === 11) { // Pár es
-      return 'SPLIT';
-  } else if (cardValue === 10) {
-      return 'STAND';
-  } else if (cardValue === 9) {
-      if (dealerCard === 7 || dealerCard >= 10) return 'STAND';
-      return 'SPLIT';
-  } else if (cardValue === 8) {
-      return 'SPLIT';
-  } else if (cardValue === 7) {
-      if (dealerCard >= 8) return 'HIT';
-      return 'SPLIT';
-  } else if (cardValue === 6) {
-      if (dealerCard >= 7) return 'HIT';
-      return 'SPLIT';
-  } else if (cardValue === 5) {
-      return 'DOUBLE';
-  } else if (cardValue === 4) {
-      if (dealerCard === 5 || dealerCard === 6) return 'SPLIT';
-      return 'HIT';
-  } else if (cardValue === 3) {
-      if (dealerCard >= 8) return 'HIT';
-      return 'SPLIT';
-  } else if (cardValue === 2) {
-      if (dealerCard >= 8) return 'HIT';
-      return 'SPLIT';
-  }
+    // Funkce pro získání hodnoty karty
+    function getCardValue(card) {
+        if (card === 'A') return 11;
+        return parseInt(card) || 10; // Pokud karta není číslo, považujeme ji za 10 (J, Q, K)
+    }
+
+    // Zjistíme, zda máme pár
+    if (playerCards.length === 2 && getCardValue(playerCards[0]) === getCardValue(playerCards[1])) {
+        const cardValue = getCardValue(playerCards[0]);
+
+        // Rozhodování podle dealerovy karty
+        switch (dealerCard) {
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                if (cardValue === 11) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 10) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 9) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 8) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 7) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 6) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 5) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+                if (cardValue === 4) return 'HIT (táhnete další kartu)';
+                if (cardValue === 3) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 2) return 'SPLIT (karty rozdělíte)';
+                break;
+            case 7:
+                if (cardValue === 11) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 10) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 9) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 8) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 7) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 6) return 'HIT (táhnete další kartu)';
+                if (cardValue === 5) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+                if (cardValue === 4) return 'HIT (táhnete další kartu)';
+                if (cardValue === 3) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 2) return 'SPLIT (karty rozdělíte)';
+                break;
+            case 8:
+                if (cardValue === 11) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 10) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 9) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 8) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 7) return 'HIT (táhnete další kartu)';
+                if (cardValue === 6) return 'HIT (táhnete další kartu)';
+                if (cardValue === 5) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+                if (cardValue === 4) return 'HIT (táhnete další kartu)';
+                if (cardValue === 3) return 'HIT (táhnete další kartu)';
+                if (cardValue === 2) return 'HIT (táhnete další kartu)';
+                break;
+            case 9:
+                if (cardValue === 11) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 10) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 9) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 8) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 7) return 'HIT (táhnete další kartu)';
+                if (cardValue === 6) return 'HIT (táhnete další kartu)';
+                if (cardValue === 5) return 'DOUBLE (zdvojnásobíte sázku, pokud nejde tak Hit)';
+                if (cardValue === 4) return 'HIT (táhnete další kartu)';
+                if (cardValue === 3) return 'HIT (táhnete další kartu)';
+                if (cardValue === 2) return 'HIT (táhnete další kartu)';
+                break;
+            case 10:
+                if (cardValue === 11) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 10) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 9) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 8) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 7) return 'HIT (táhnete další kartu)';
+                if (cardValue === 6) return 'HIT (táhnete další kartu)';
+                if (cardValue === 5) return 'HIT (táhnete další kartu)';
+                if (cardValue === 4) return 'HIT (táhnete další kartu)';
+                if (cardValue === 3) return 'HIT (táhnete další kartu)';
+                if (cardValue === 2) return 'HIT (táhnete další kartu)';
+                break;
+            case 'A':
+                if (cardValue === 11) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 10) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 9) return 'STAND (stojíte, další kartu neberete)';
+                if (cardValue === 8) return 'SPLIT (karty rozdělíte)';
+                if (cardValue === 7) return 'HIT (táhnete další kartu)';
+                if (cardValue === 6) return 'HIT (táhnete další kartu)';
+                if (cardValue === 5) return 'HIT (táhnete další kartu)';
+                if (cardValue === 4) return 'HIT (táhnete další kartu)';
+                if (cardValue === 3) return 'HIT (táhnete další kartu)';
+                if (cardValue === 2) return 'HIT (táhnete další kartu)';
+                break;
+        }
+    } 
 }
 
 // Funkce na výpočet a zobrazení akce
